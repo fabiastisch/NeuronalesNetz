@@ -43,7 +43,7 @@ public class MNISTLerarn {
             weights[i] = random.nextFloat();
         }
         nn.createFullMesh(weights);
-        //connections = nn.setConnectionsFromFile();
+        connections = nn.setConnectionsFromFile();
 
 
 
@@ -51,7 +51,7 @@ public class MNISTLerarn {
 
 
         float epsilon = 0.0050f;
-        int wh = 2;
+        int wh = 3;
         while (wh < 3) {
             System.out.println("Epoche: " + wh);
             wh++;
