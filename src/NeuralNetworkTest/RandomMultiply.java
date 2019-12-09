@@ -75,7 +75,7 @@ public class RandomMultiply {
                 float[] schoulds = new float[1];
                 schoulds[0] = l1.get(i);
              //   System.out.println(l1.get(i));
-                nn.backpropagation(schoulds, epsilon);
+                nn.backpropagation(schoulds, epsilon,1);
             }
 
             epsilon *= 0.9f;
@@ -103,7 +103,7 @@ public class RandomMultiply {
 
             schoulds[0]= x * y;
             System.out.println(schoulds[0]);
-            nn.backpropagation(schoulds, 0.01f);
+            nn.backpropagation(schoulds, 0.01f,1);
 
         }
 

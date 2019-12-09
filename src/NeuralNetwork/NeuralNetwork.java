@@ -12,7 +12,7 @@ public class NeuralNetwork {
     private int trainingSample = 0;
 
 
-    public void backpropagation(float[] shoulds, float epsilon) {
+    public void backpropagation(float[] shoulds, float epsilon, int applyAfter) {
 
 
         if (shoulds.length != outputNeurons.size()) {
@@ -40,7 +40,7 @@ public class NeuralNetwork {
             hiddenNeurons.get(i).deltaLearning(epsilon);
         }
 
-        if (trainingSample % 64 == 0) {
+        if (trainingSample % applyAfter == 0) {
             for (int i = 0; i < shoulds.length; i++) {
                 outputNeurons.get(i).applyBatch();
             }

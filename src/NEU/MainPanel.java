@@ -47,6 +47,7 @@ public class MainPanel extends JPanel implements NumberDrawnListener {
 
         finalImage.setHorizontalTextPosition(SwingConstants.CENTER);
 
+
         drawPanelContainer.setBackground(Color.LIGHT_GRAY);
 
         // Layout panels
@@ -71,7 +72,7 @@ public class MainPanel extends JPanel implements NumberDrawnListener {
                 String s = inputText.getText();;
                 int i = Integer.parseInt(s);
 
-                //MNISTLerarn.learnNew(i);
+                MNISTLerarn.learnNew(i);
 
             }
         });
@@ -117,23 +118,20 @@ public class MainPanel extends JPanel implements NumberDrawnListener {
         final Rectangle bounds = ImageUtils.findBoundsOfBlackShape(image);
         final Dimension newDim = getScaledMnistDigitDimensions(bounds);
 
-        // Get only the digit out from the rest of the image
-        final BufferedImage cropped = image.getSubimage(bounds.x,
+        final BufferedImage ausgeschnittenesImage = image.getSubimage(bounds.x,
                 bounds.y,
                 bounds.width,
                 bounds.height);
 
-        // Scale the digit to 20x20 box as required by MNIST
-        final BufferedImage scaled = ImageUtils.scale(cropped, newDim.width, newDim.height);
+        final BufferedImage scaled = ImageUtils.scale(ausgeschnittenesImage, newDim.width, newDim.height);
 
-        // Put the 20x20 image to 28x28 background and center it by the
-        // center of mass.
+
         final BufferedImage mnistInputImage
                 = ImageUtils.addImageToCenter(scaled,
                 ImageUtils.MNIST_IMAGE_SIZE,
                 ImageUtils.MNIST_IMAGE_SIZE);
 
-        // Add images to the UI
+
 
         finalImage.setIcon(new ImageIcon(mnistInputImage));
 /*//TODO:

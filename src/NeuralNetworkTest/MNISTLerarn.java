@@ -43,15 +43,17 @@ public class MNISTLerarn {
             weights[i] = random.nextFloat();
         }
         nn.createFullMesh(weights);
-        //connections = nn.setConnectionsFromFile();
-
-
-
+        connections = nn.setConnectionsFromFile();
 
 
 
         float epsilon = 0.0050f;
-        int wh = 0;
+
+
+        int wh = 3;
+
+
+
         while (wh < 3) {
             System.out.println("Epoche: " + wh);
             wh++;
@@ -68,7 +70,7 @@ public class MNISTLerarn {
 
                 float[] schoulds = new float[10];
                 schoulds[digits.get(i).label] = 1;
-                nn.backpropagation(schoulds, epsilon);
+                nn.backpropagation(schoulds, epsilon,644);
             }
 
             epsilon *= 0.9f;
@@ -91,14 +93,7 @@ public class MNISTLerarn {
             }
         }
 
-       /* ProbabilityDigit[] probDigits = new ProbabilityDigit[10];
-        for (int j = 0; j < probDigits.length; j++) {
-            probDigits[j] = new ProbabilityDigit(j, outputs[j].getValue());
-        }
-        Arrays.sort(probDigits, Collections.reverseOrder());
-        for (ProbabilityDigit probabilityDigit: probDigits){
-            System.out.println(probabilityDigit.DIGIT + " : " + probabilityDigit.probability);
-        }*/
+
 
     }
 
@@ -117,9 +112,7 @@ public class MNISTLerarn {
 
         Arrays.sort(probDigits, Collections.reverseOrder());
         return probDigits;
-        /*for (ProbabilityDigit probabilityDigit: probDigits){
-            System.out.println(probabilityDigit.DIGIT + " : " + probabilityDigit.probability);
-        }*/
+
 
     }
 
@@ -167,10 +160,10 @@ public class MNISTLerarn {
     public static void  learnNew(int a){
         float[] schoulds = new float[10];
 
-        schoulds[a-1] = 1;
+        schoulds[a] = 1;
         System.out.println(schoulds[a-1]);
 
-        nn.backpropagation(schoulds,1);
+        nn.backpropagation(schoulds,1,1);
     }
 
     public static class ProbabilityDigit implements Comparable<ProbabilityDigit> {
