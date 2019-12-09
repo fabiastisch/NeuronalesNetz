@@ -50,13 +50,13 @@ public class MNISTLerarn {
         float epsilon = 0.0050f;
 
 
-        int wh = 3;
+        int wh = 0;
 
 
 
-        while (wh < 3) {
+        while ( 0 < wh) {
             System.out.println("Epoche: " + wh);
-            wh++;
+            wh--;
             test(); // Gibt das ergebnis des trainingsverhalten an...
 
             for (int i = 0; i < digits.size(); i++) {
@@ -75,7 +75,7 @@ public class MNISTLerarn {
 
             epsilon *= 0.9f;
 
-            nn.saveConnections();
+            nn.saveConnections(wh);
         }
 
 

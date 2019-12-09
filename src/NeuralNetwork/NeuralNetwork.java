@@ -175,9 +175,9 @@ public class NeuralNetwork {
 
     }
 
-    public void saveConnections() {
+    public void saveConnections(int wh) {
         System.out.println("Save");
-        String path = "src/connections.sav";
+        String path = "src/"+wh+"connections.sav";
         if (new File(path).exists()) {
             new File(path).delete();
         }
@@ -200,7 +200,7 @@ public class NeuralNetwork {
 
 
     public List<Connection> setConnectionsFromFile() {
-        String path = "src/connections.sav";
+        String path = "src/30connections.sav";
 
         try {
             FileInputStream fis = new FileInputStream(path);
