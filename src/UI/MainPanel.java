@@ -1,7 +1,6 @@
-package NEU;
+package UI;
 
 
-import NeuralNetwork.NeuralNetwork;
 import NeuralNetworkTest.MNISTLerarn;
 import Tools.ImageUtils;
 
@@ -9,7 +8,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 import javax.swing.*;
 
@@ -134,9 +132,7 @@ public class MainPanel extends JPanel implements NumberDrawnListener {
 
 
         finalImage.setIcon(new ImageIcon(mnistInputImage));
-/*//TODO:
-        final int result = digitDetector.recognize(mnistInputImage);
-        resultText.setText("You wrote: " + result);*/
+
 
         double[] doubles= ImageUtils.getPixelsAndConvertToBlackAndWhite(mnistInputImage);
         MNISTLerarn.ProbabilityDigit[] probabilityDigits = MNISTLerarn.insertdouble(doubles);

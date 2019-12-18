@@ -1,4 +1,4 @@
-package NEU;
+package UI;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

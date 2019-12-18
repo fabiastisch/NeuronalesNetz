@@ -11,11 +11,10 @@ import java.awt.image.Raster;
 
 public class ImageUtils {
 
-    // http://yann.lecun.com/exdb/mnist/
+
     public static final int MNIST_DIGIT_BOUNDS_SIZE = 20;
     public static final int MNIST_IMAGE_SIZE = 28;
 
-    // This value is recomendation from https://deeplearning4j.org/rbm-mnist-tutorial.html
     private static final int GRAYSCALE_TO_BLACK_AND_WHITE_MIN_LIMIT = 35;
     private static final int BLACK_AND_WHITE_WHTIE_VALUE = 0;
     private static final int BLACK_AND_WHITE_BLACK_VALUE = 255;

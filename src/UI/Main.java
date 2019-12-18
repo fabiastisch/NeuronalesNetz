@@ -1,4 +1,4 @@
-package NEU;
+package UI;
 
 import NeuralNetwork.NeuralNetwork;
 

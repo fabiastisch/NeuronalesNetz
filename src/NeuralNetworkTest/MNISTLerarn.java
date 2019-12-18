@@ -1,6 +1,6 @@
 package NeuralNetworkTest;
 
-import NEU.Main;
+import UI.Main;
 import NeuralNetwork.*;
 
 
@@ -43,13 +43,20 @@ public class MNISTLerarn {
             weights[i] = random.nextFloat();
         }
         nn.createFullMesh(weights);
+
+        /**
+         * Auskommentieren, wenn es neu lernen soll
+         */
         connections = nn.setConnectionsFromFile();
 
 
 
-        float epsilon = 0.0050f;
+        float epsilon = 0.500f; // LERNRATE
 
 
+        /**
+         * Epochen erhöhen zum lernen
+         */
         int wh = 0;
 
 
