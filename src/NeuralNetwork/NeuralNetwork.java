@@ -200,7 +200,7 @@ public class NeuralNetwork {
 
 
     public List<Connection> setConnectionsFromFile() {
-        String path = "src/30connections.sav";
+        String path = "src/connections.sav";
 
         try {
             FileInputStream fis = new FileInputStream(path);
